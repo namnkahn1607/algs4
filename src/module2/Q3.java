@@ -1,4 +1,6 @@
-package module2;/* Union Find Interview Question
+package module2;
+
+/* Union Find Interview Question
 * assume N is the total number of elements
 * successor: O(logN) first call, O(1) next call
 * remove: relies on find, so they're the same
@@ -24,6 +26,7 @@ public class Q3 {
         if (deleted[x]) return;
 
         successor[x] = successor(x + 1);
+        deleted[x] = true;
     }
 
     public int successor(int x) {

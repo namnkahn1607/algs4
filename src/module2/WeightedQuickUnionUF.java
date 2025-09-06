@@ -1,4 +1,6 @@
-package module2;/* Weighted Quick Union - Size
+package module2;
+
+/* Weighted Quick Union - Size
  * N: number of elements
  * K: number of method calls
  * initialize: O(N)

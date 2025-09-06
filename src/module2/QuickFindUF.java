@@ -1,4 +1,6 @@
-package module2;/* Quick Find
+package module2;
+
+/* Quick Find
  * N: number of elements
  * K: number of method calls
  * initialize: O(N)

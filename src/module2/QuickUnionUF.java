@@ -1,4 +1,6 @@
-package module2;/* Quick Union
+package module2;
+
+/* Quick Union
  * N: number of elements
  * K: number of method calls
  * initialize: O(N)

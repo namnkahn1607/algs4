@@ -1,4 +1,6 @@
-package module2;/* Abstract Union Find: Size Weight + Path Compression
+package module2;
+
+/* Abstract Union Find: Size Weight + Path Compression
  * N: number of elements
  * K: number of method calls
  * initialize: O(N)
