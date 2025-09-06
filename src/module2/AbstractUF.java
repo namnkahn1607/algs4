@@ -1,9 +1,10 @@
-/* Abstract Union Find: Weight + Path Compression
+package module2;/* Abstract Union Find: Size Weight + Path Compression
  * N: number of elements
  * K: number of method calls
  * initialize: O(N)
- * connected: best - O(K), worst - O(K.logN)
- * union: best - O(K), worst - O(K.logN)
+ * connected: best - O(K.α(K,N)), worst - O(K.logN)
+ * union: best - O(K.a(K,N)), worst - O(K.logN)
+ * where a() is Ackermann function
  * */
 
 import edu.princeton.cs.algs4.StdIn;

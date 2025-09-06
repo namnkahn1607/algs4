@@ -1,3 +1,5 @@
+package module2;
+
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdRandom;
@@ -13,6 +15,7 @@ public class PercolationStats {
 
         T = trials;
         fractions = new double[trials];
+        int totalSites = n * n;
 
         for (int i = 0; i < trials; ++i) {
             Percolation fig = new Percolation(n);
@@ -24,7 +27,7 @@ public class PercolationStats {
                 fig.open(row, col);
             }
 
-            fractions[i] = 1.0 * fig.numberOfOpenSites() / fig.totalSites;
+            fractions[i] = 1.0 * fig.numberOfOpenSites() / totalSites;
         }
     }
 

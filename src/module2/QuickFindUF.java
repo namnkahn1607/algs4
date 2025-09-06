@@ -1,4 +1,4 @@
-/* Quick Find
+package module2;/* Quick Find
  * N: number of elements
  * K: number of method calls
  * initialize: O(N)
@@ -37,6 +37,6 @@ public class QuickFindUF extends AbstractUF {
     public static void main(String[] args) {
         final int N = StdIn.readInt();
         QuickFindUF uf = new QuickFindUF(N);
-        AbstractUF.run(uf);
+        run(uf);
     }
 }

@@ -1,3 +1,5 @@
+package module2;
+
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
 public class Percolation {
@@ -5,8 +7,6 @@ public class Percolation {
     private final WeightedQuickUnionUF uf;
     private final int dimension;
     private int opened;
-
-    public final int totalSites;
 
     private final int topVirtualSiteIndex;
     private final int bottomVirtualSiteIndex;
@@ -21,7 +21,7 @@ public class Percolation {
         dimension = n;
         opened = 0;
 
-        totalSites = n * n;
+        int totalSites = n * n;
 
         topVirtualSiteIndex = totalSites;
         bottomVirtualSiteIndex = totalSites + 1;
@@ -45,7 +45,7 @@ public class Percolation {
 
         for (int[] direction : dir) {
             int newRow = row + direction[0];
-            int newCol = col + direction[0];
+            int newCol = col + direction[1];
 
             if (validatePos(newRow, newCol) && isOpen(newRow, newCol)) {
                 final int neighborSiteIndex = calculateIndex(newRow, newCol);

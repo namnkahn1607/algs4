@@ -1,4 +1,4 @@
-/* Weighted Quick Union
+package module2;/* Weighted Quick Union - Size
  * N: number of elements
  * K: number of method calls
  * initialize: O(N)
@@ -27,6 +27,6 @@ public class WeightedQuickUnionUF extends AbstractUF {
     public static void main(String[] args) {
         int N = StdIn.readInt();
         WeightedQuickUnionUF uf = new WeightedQuickUnionUF(N);
-        AbstractUF.run(uf);
+        run(uf);
     }
 }

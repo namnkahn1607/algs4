@@ -1,4 +1,4 @@
-/* Quick Union
+package module2;/* Quick Union
  * N: number of elements
  * K: number of method calls
  * initialize: O(N)
@@ -37,6 +37,6 @@ public class QuickUnionUF extends AbstractUF {
     public static void main(String[] args) {
         final int N = StdIn.readInt();
         QuickUnionUF uf = new QuickUnionUF(N);
-        AbstractUF.run(uf);
+        run(uf);
     }
 }
