@@ -1,3 +1,5 @@
+// Transaction
+
 public class Transaction {
 
     private String operation;
