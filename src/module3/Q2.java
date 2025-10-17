@@ -1,4 +1,4 @@
-/* Analysis of Algorithms interview question:
+package module3;/* Analysis of Algorithms interview question:
 * search in a bitonic array
 * use: 3logN compares in the worst case */
 

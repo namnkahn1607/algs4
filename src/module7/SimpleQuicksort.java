@@ -1,12 +1,19 @@
 package module7;
 
+/* Simple Quicksort: 2-way Partition
+ * N: size of array
+ * average: O(NlogN), worst: O(N^2)
+ * shuffle prevents (most) worst case: sorted arrays (asc/desc)
+ * but not duplicate-populated arrays.
+ */
+
 import edu.princeton.cs.algs4.StdRandom;
 
 import java.util.Arrays;
 
-public class SimpleQuickSort {
+public class SimpleQuicksort {
 
-    private static int partition(int[] arr, int L, int R) {
+    protected static int partition(int[] arr, int L, int R) {
         int leftWall = L + 1;
 
         for (int i = L + 1; i <= R; ++i) {
@@ -39,7 +46,7 @@ public class SimpleQuickSort {
         int[] arr = {18, 19, 33, 20, 19, 12, 8, 24, 14, 14};
         StdRandom.shuffle(arr);
 
-        SimpleQuickSort.sort(arr, 0, arr.length - 1);
+        SimpleQuicksort.sort(arr, 0, arr.length - 1);
         System.out.println(Arrays.toString(arr));
     }
 }
