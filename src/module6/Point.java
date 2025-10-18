@@ -1,3 +1,5 @@
+package module6;
+
 import edu.princeton.cs.algs4.StdDraw;
 
 import java.util.Comparator;

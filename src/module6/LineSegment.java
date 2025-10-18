@@ -1,3 +1,5 @@
+package module6;
+
 public class LineSegment {
     private final Point p;
     private final Point q;
@@ -5,13 +7,13 @@ public class LineSegment {
     public LineSegment(Point p, Point q) {
         if (p == null || q == null) {
             throw new IllegalArgumentException(
-                    "argument to LineSegment constructor is null"
+                    "argument to module6.LineSegment constructor is null"
             );
         }
 
         if (p.equals(q)) {
             throw new IllegalArgumentException(
-                    "both arguments to LineSegment constructor are the same point: " + p
+                    "both arguments to module6.LineSegment constructor are the same point: " + p
             );
         }
 

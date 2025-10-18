@@ -10,7 +10,6 @@ import edu.princeton.cs.algs4.StdRandom;
 import java.util.Arrays;
 
 public class SimpleMergeSort {
-
     private static void merge(int[] arr, int L, int M, int R) {
         final int size1 = M - L + 1;
         final int size2 = R - M;

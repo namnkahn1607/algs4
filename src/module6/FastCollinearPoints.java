@@ -1,3 +1,5 @@
+package module6;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -9,14 +11,14 @@ public class FastCollinearPoints {
     public FastCollinearPoints(Point[] points) {
         if (points == null) {
             throw new IllegalArgumentException(
-                    "argument to BruteCollinearPoints is null"
+                    "argument to module6.BruteCollinearPoints is null"
             );
         }
 
         for (Point point : points) {
             if (point == null) {
                 throw new IllegalArgumentException(
-                        "argument element to BruteCollinearPoints is null"
+                        "argument element to module6.BruteCollinearPoints is null"
                 );
             }
         }
@@ -27,7 +29,7 @@ public class FastCollinearPoints {
         for (int i = 1; i < clone.length; ++i) {
             if (clone[i].compareTo(clone[i - 1]) == 0) {
                 throw new IllegalArgumentException(
-                        "argument to BruteCollinearPoints contains repeated point"
+                        "argument to module6.BruteCollinearPoints contains repeated point"
                 );
             }
         }
