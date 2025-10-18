@@ -5,6 +5,7 @@ package module7;
  * average: O(NlogN) - as usual Quicksort
  * best: O(N) for 3-distinct-value arrays
  * worst: O(N^2) for very distinctive arrays
+ * O(logN) space
  * -> suitable for arrays with small number of distinct values,
  * which can be called Entropy-optimal arrays.
  */

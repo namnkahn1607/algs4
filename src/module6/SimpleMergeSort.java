@@ -1,5 +1,10 @@
 package module6;
 
+/* Simple Mergesort: 2-way Mergesort + 2-size Cutoff
+ * N: size of array
+ * average/best/worst: O(NlogN) time & O(N) space
+ */
+
 import edu.princeton.cs.algs4.StdRandom;
 
 import java.util.Arrays;
@@ -36,7 +41,11 @@ public class SimpleMergeSort {
     }
 
     public static void sort(int[] arr, int L, int R) {
-        if (L >= R) {
+        if (L + 1>= R) {
+            if (L + 1 == R && arr[L] > arr[R]) {
+                swap(arr, L, R);
+            }
+
             return;
         }
 
@@ -44,6 +53,12 @@ public class SimpleMergeSort {
         sort(arr, L, M);
         sort(arr, M + 1, R);
         merge(arr, L, M, R);
+    }
+
+    private static void swap(int[] arr, int i, int j) {
+        int tmp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = tmp;
     }
 
     public static void main(String[] args) {

@@ -2,7 +2,8 @@ package module7;
 
 /* Super Quickselect: 2-way Partition + Median of 3 + Non-sentinel Cutoff
  * N: size of array
- * average/best/worst: O(N)
+ * average/best/worst: O(N) time
+ * O(logN) space
  * for array with duplicate values, algs4's implementation
  * might produce wrong answer, so this variant fixed it.
  */

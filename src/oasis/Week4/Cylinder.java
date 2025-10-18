@@ -1,6 +1,6 @@
-package oasis;
+package oasis.Week4;
 
-public class Cylinder extends _Circle {
+public class Cylinder extends Circle {
 
     private double height;
 
@@ -36,7 +36,7 @@ public class Cylinder extends _Circle {
 
     @Override
     public String toString() {
-        return String.format("oasis.Cylinder[%s,height=%f]", super.toString(), getHeight());
+        return String.format("oasis.Week4.Cylinder[%s,height=%f]", super.toString(), getHeight());
     }
 
     @Override

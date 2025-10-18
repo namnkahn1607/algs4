@@ -1,41 +1,56 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class BruteCollinearPoints {
-
-    private ArrayList<LineSegment> lines;
-    private int segmentCount;
+    private final List<LineSegment> segments = new ArrayList<>();
 
     public BruteCollinearPoints(Point[] points) {
         if (points == null) {
-            throw new IllegalArgumentException("point array is null");
+            throw new IllegalArgumentException(
+                    "argument to BruteCollinearPoints is null"
+            );
         }
 
-        for (Point p : points) {
-            if (p == null) {
-                throw new IllegalArgumentException("a point is null");
+        for (Point point : points) {
+            if (point == null) {
+                throw new IllegalArgumentException(
+                        "argument element to BruteCollinearPoints is null"
+                );
             }
         }
 
-        lines = new ArrayList<>();
-        segmentCount = 0;
+        Point[] clone = points.clone();
+        Arrays.sort(clone);
 
-        for (int a = 0; a < points.length - 3; ++a) {
-            for (int b = a + 1; b < points.length - 2; ++b) {
-                for (int c = b + 1; c < points.length - 1; ++c) {
-                    for (int d = c + 1; d < points.length; ++d) {
-                        Point P = points[a];
-                        Point Q = points[b];
-                        Point R = points[c];
-                        Point S = points[d];
+        for (int i = 1; i < clone.length; ++i) {
+            if (clone[i].compareTo(clone[i - 1]) == 0) {
+                throw new IllegalArgumentException(
+                        "argument to BruteCollinearPoints contains repeated point"
+                );
+            }
+        }
 
-                        if (P.equals(Q) || P.equals(R) || P.equals(S) ||
-                            Q.equals(R) || Q.equals(S) || R.equals(S)) {
-                            throw new IllegalArgumentException("array contain duplicate points");
-                        }
+        discoverSegments(clone);
+    }
 
-                        if (isCollinear(P, Q, R, S)) {
-                            ++segmentCount;
-                            lines.add(new LineSegment(P, S));
+    private void discoverSegments(Point[] points) {
+        final int N = points.length;
+
+        for (int a = 0; a < N - 3; ++a) {
+            Point p = points[a];
+
+            for (int b = a + 1; b < N - 2; ++b) {
+                Point q = points[b];
+
+                for (int c = b + 1; c < N - 1; ++c) {
+                    Point r = points[c];
+
+                    for (int d = c + 1; d < N; ++d) {
+                        Point s = points[d];
+
+                        if (validSegment(p, q, r, s)) {
+                            segments.add(new LineSegment(p, s));
                         }
                     }
                 }
@@ -43,19 +58,19 @@ public class BruteCollinearPoints {
         }
     }
 
-    private boolean isCollinear(Point P, Point Q, Point R, Point S) {
-        double PtoQ = P.slopeTo(Q);
-        double PtoR = P.slopeTo(R);
-        double PtoS = P.slopeTo(S);
+    private boolean validSegment(Point p, Point q, Point r, Point s) {
+        double pToq = p.slopeTo(q);
+        double pTor = p.slopeTo(r);
+        double pTos = p.slopeTo(s);
 
-        return PtoQ == PtoR && PtoR == PtoS;
+        return Double.compare(pToq, pTor) == 0 && Double.compare(pTor, pTos) == 0;
     }
 
     public int numberOfSegments() {
-        return segmentCount;
+        return segments.size();
     }
 
     public LineSegment[] segments() {
-        return lines.toArray(new LineSegment[0]);
+        return segments.toArray(new LineSegment[0]);
     }
 }

@@ -1,4 +1,4 @@
-package oasis;
+package oasis.Week6;
 
 public abstract class Shape {
 
@@ -33,6 +33,6 @@ public abstract class Shape {
     public abstract double getPerimeter();
 
     public String toString() {
-        return String.format("oasis.Shape[color=%s,filled=%b]", getColor(), isFilled());
+        return String.format("oasis.Week6.Shape[color=%s,filled=%b]", getColor(), isFilled());
     }
 }

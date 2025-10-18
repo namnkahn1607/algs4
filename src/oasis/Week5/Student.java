@@ -1,4 +1,4 @@
-package oasis;
+package oasis.Week5;
 
 public class Student extends Person {
 
@@ -7,7 +7,7 @@ public class Student extends Person {
     private double fee;
 
     /**
-     * oasis.Student constructor.
+     * oasis.Week5.Student constructor.
      */
     public Student(String name, String address, String program, int year, double fee) {
         super(name, address);
@@ -43,7 +43,7 @@ public class Student extends Person {
     @Override
     public String toString() {
         return String.format(
-                "oasis.Student[%s,program=%s,year=%d,fee=%.1f]",
+                "oasis.Week5.Student[%s,program=%s,year=%d,fee=%.1f]",
                 super.toString(), getProgram(), getYear(), getFee()
         );
     }

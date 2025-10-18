@@ -3,13 +3,9 @@
 import java.util.ArrayList;
 
 public class Account {
-
     private double balance;
     private final ArrayList<Transaction> transitionList = new ArrayList<>();
 
-    /**
-     * private deposit.
-     */
     private void deposit(double amount) {
         if (amount <= 0) {
             System.out.println("So tien ban nap vao khong hop le!");
@@ -20,9 +16,6 @@ public class Account {
         transitionList.add(new Transaction(Transaction.DEPOSIT, amount, balance));
     }
 
-    /**
-     * private withdraw.
-     */
     private void withdraw(double amount) {
         if (amount <= 0) {
             System.out.println("So tien ban rut ra khong hop le!");
@@ -36,9 +29,6 @@ public class Account {
         transitionList.add(new Transaction(Transaction.WITHDRAW, amount, balance));
     }
 
-    /**
-     * public addTransaction.
-     */
     public void addTransaction(double amount, String operation) {
         switch (operation) {
             case "deposit":
@@ -53,10 +43,7 @@ public class Account {
                 System.out.println("Yeu cau khong hop le!");
         }
     }
-
-    /**
-     * public printTransaction.
-     */
+    
     public void printTransaction() {
         for (int i = 0; i < transitionList.size(); ++i) {
             Transaction current = transitionList.get(i);

@@ -1,4 +1,4 @@
-package oasis;
+package oasis.Week6;
 
 import java.util.Objects;
 
@@ -87,7 +87,7 @@ public class Rectangle extends Shape {
     @Override
     public String toString() {
         return String.format(
-                "oasis.Rectangle[topLeft=%s,width=%.1f,length=%.1f,color=%s,filled=%b]",
+                "oasis.Week6.Rectangle[topLeft=%s,width=%.1f,length=%.1f,color=%s,filled=%b]",
                 getTopLeft().toString(), getWidth(), getLength(), getColor(), isFilled()
         );
     }

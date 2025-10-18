@@ -2,7 +2,8 @@ package module7;
 
 /* Simple Quicksort: 2-way Partition
  * N: size of array
- * average: O(NlogN), worst: O(N^2)
+ * average: O(NlogN) time, worst: O(N^2) time
+ * O(logN) space
  * shuffle prevents (most) worst case: sorted arrays (asc/desc)
  * but not duplicate-populated arrays.
  */
@@ -35,7 +36,9 @@ public class SimpleQuicksort {
     }
 
     public static void sort(int[] arr, int L, int R) {
-        if (L >= R) return;
+        if (L >= R) {
+            return;
+        }
 
         int pivot = partition(arr, L, R);
         sort(arr, L, pivot - 1);

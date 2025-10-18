@@ -1,4 +1,4 @@
-package oasis;
+package oasis.Week5;
 
 public class Person {
 
@@ -28,6 +28,6 @@ public class Person {
 
     @Override
     public String toString() {
-        return String.format("oasis.Person[name=%s,address=%s]", getName(), getAddress());
+        return String.format("oasis.Week5.Person[name=%s,address=%s]", getName(), getAddress());
     }
 }

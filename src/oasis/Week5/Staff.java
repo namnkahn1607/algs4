@@ -1,4 +1,4 @@
-package oasis;
+package oasis.Week5;
 
 public class Staff extends Person {
 
@@ -6,7 +6,7 @@ public class Staff extends Person {
     private double pay;
 
     /**
-     * oasis.Staff constructor.
+     * oasis.Week5.Staff constructor.
      */
     public Staff(String name, String address, String school, double pay) {
         super(name, address);
@@ -33,7 +33,7 @@ public class Staff extends Person {
     @Override
     public String toString() {
         return String.format(
-                "oasis.Staff[%s,school=%s,pay=%.1f]", super.toString(), getSchool(), getPay()
+                "oasis.Week5.Staff[%s,school=%s,pay=%.1f]", super.toString(), getSchool(), getPay()
         );
     }
 }

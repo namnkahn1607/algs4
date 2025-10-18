@@ -1,4 +1,4 @@
-package oasis;
+package oasis.Week6;
 
 import java.util.Objects;
 
@@ -57,7 +57,7 @@ public class Square extends Rectangle {
     @Override
     public String toString() {
         return String.format(
-                "oasis.Square[topLeft=%s,side=%.1f,color=%s,filled=%b]",
+                "oasis.Week6.Square[topLeft=%s,side=%.1f,color=%s,filled=%b]",
                 getTopLeft().toString(), getSide(), getColor(), isFilled()
         );
     }

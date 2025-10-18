@@ -1,4 +1,4 @@
-package oasis;
+package oasis.Week6;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -27,7 +27,7 @@ public class Layer {
      * getInfo().
      */
     public String getInfo() {
-        StringBuilder res = new StringBuilder("oasis.Layer of crazy shapes:\n");
+        StringBuilder res = new StringBuilder("oasis.Week6.Layer of crazy shapes:\n");
 
         for (Shape shape : shapes) {
             res.append(shape.toString());

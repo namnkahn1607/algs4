@@ -1,20 +1,20 @@
-package oasis;
+package oasis.Week4;
 
-public class _Circle {
+public class Circle {
 
     private double radius;
     private String color;
     protected static final double PI = Math.PI;
 
-    public _Circle() {
+    public Circle() {
         super();
     }
 
-    public _Circle(double radius) {
+    public Circle(double radius) {
         this.radius = radius;
     }
 
-    public _Circle(double radius, String color) {
+    public Circle(double radius, String color) {
         this.radius = radius;
         this.color = color;
     }
@@ -41,6 +41,6 @@ public class _Circle {
 
     @Override
     public String toString() {
-        return String.format("oasis.Circle[radius=%f,color=%s]", getRadius(), getColor());
+        return String.format("oasis.Week6.Circle[radius=%f,color=%s]", getRadius(), getColor());
     }
 }

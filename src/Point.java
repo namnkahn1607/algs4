@@ -3,7 +3,6 @@ import edu.princeton.cs.algs4.StdDraw;
 import java.util.Comparator;
 
 public class Point implements Comparable<Point> {
-
     private final int x;
     private final int y;
 
@@ -17,54 +16,47 @@ public class Point implements Comparable<Point> {
     }
 
     public void drawTo(Point that) {
-        StdDraw.line(x, y, that.x, that.y);
+        StdDraw.line(this.x, this.y, that.x, that.y);
     }
 
     @Override
     public String toString() {
-        return "(" + x + ", " + y + ")";
-    }
-
-    public double slopeTo(Point that) {
-        int dy = y - that.y;
-        int dx = x - that.x;
-
-        if (dx == 0 && dy == 0)
-            return Double.NEGATIVE_INFINITY;
-
-        if (dx == 0)
-            return Double.POSITIVE_INFINITY;
-
-        if (dy == 0)
-            return +0.0;
-
-        return (double)dy / dx;
+        return String.format("(%d,%d)", x, y);
     }
 
     @Override
     public int compareTo(Point that) {
-        if (y != that.y) {
-            return Integer.compare(y, that.y);
+        int compareY = Integer.compare(y, that.y);
+
+        if (compareY == 0) {
+            return Integer.compare(x, that.x);
         }
 
-        return Integer.compare(x, that.x);
+        return compareY;
+    }
+
+    public double slopeTo(Point that) {
+        if (this.compareTo(that) == 0) return Double.NEGATIVE_INFINITY;
+        if (x == that.x) return Double.POSITIVE_INFINITY;
+        if (y == that.y) return 0;
+
+        return 1.0 * (that.y - y) / (that.x - x);
     }
 
     public Comparator<Point> slopeOrder() {
-        return new bySlope(this);
+        return new BySlope(this);
     }
 
-    private static class bySlope implements Comparator<Point> {
-
+    private static class BySlope implements Comparator<Point> {
         Point origin;
 
-        public bySlope(Point p) {
-            origin = p;
+        BySlope(Point origin) {
+            this.origin = origin;
         }
 
         @Override
-        public int compare(Point v, Point w) {
-            return Double.compare(origin.slopeTo(v), origin.slopeTo(w));
+        public int compare(Point u, Point v) {
+            return Double.compare(origin.slopeTo(u), origin.slopeTo(v));
         }
     }
 }

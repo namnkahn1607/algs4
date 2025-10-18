@@ -1,4 +1,4 @@
-package oasis;
+package oasis.Week6;
 
 import java.util.Objects;
 

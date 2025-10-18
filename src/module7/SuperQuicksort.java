@@ -3,6 +3,7 @@ package module7;
 /* Super Quicksort: 2-way Partition + Median of 3 + Non-sentinel Cutoff
  * N: size of array
  * average: O(NlogN), worst: O(N^2) on Median of 3 killer arrays
+ * O(logN) space
  * handle duplicate-populated array in O(NlogN)
  * shuffle further preventing worst case
  * -> most generally efficient variant of Quicksort
