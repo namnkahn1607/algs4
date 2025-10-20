@@ -16,7 +16,6 @@ import java.util.Arrays;
 import java.util.function.IntSupplier;
 
 public class ThreeWayQuicksort {
-
     public static void sort(char[] arr, int L, int R) {
         if (L + 1 >= R) {
             if (L + 1 == R && arr[L] > arr[R])

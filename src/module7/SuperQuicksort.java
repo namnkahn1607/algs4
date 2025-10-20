@@ -15,7 +15,6 @@ import java.util.Arrays;
 import java.util.function.IntSupplier;
 
 public class SuperQuicksort {
-
     public static int partition(int[] arr, int L, int R) {
         IntSupplier median = () -> {
             final int M = L + (R - L) / 2;

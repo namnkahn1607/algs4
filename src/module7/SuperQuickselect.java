@@ -11,7 +11,6 @@ package module7;
 import edu.princeton.cs.algs4.StdRandom;
 
 public class SuperQuickselect {
-
     public static int select(int[] arr, int k) {
         if (k < 0 || k > arr.length) {
             throw new IndexOutOfBoundsException("k is not within array");

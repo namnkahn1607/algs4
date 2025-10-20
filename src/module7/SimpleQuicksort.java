@@ -13,7 +13,6 @@ import edu.princeton.cs.algs4.StdRandom;
 import java.util.Arrays;
 
 public class SimpleQuicksort {
-
     protected static int partition(int[] arr, int L, int R) {
         int leftWall = L + 1;
 
