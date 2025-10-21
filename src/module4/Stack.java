@@ -6,7 +6,6 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 public class Stack<Item> implements Iterable<Item> {
-
     private class Node {
         Item val;
         Node next;

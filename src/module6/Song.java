@@ -5,7 +5,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Comparator;
 import java.util.Objects;
 
-public class Song implements Comparable<Song> {
+public record Song(Album album, String name, int duration) implements Comparable<Song> {
     private static final int SECONDS_IN_HOUR = 3600;
     private static final int SECONDS_IN_MINUTE = 60;
 
@@ -16,36 +16,26 @@ public class Song implements Comparable<Song> {
     private static class ByName implements Comparator<Song> {
         @Override
         public int compare(Song o1, Song o2) {
-            return o1.getName().compareTo(o2.getName());
+            return o1.name().compareTo(o2.name());
         }
     }
 
     private static class ByDuration implements Comparator<Song> {
         @Override
         public int compare(Song o1, Song o2) {
-            return Integer.compare(o1.getDuration(), o2.getDuration());
+            return Integer.compare(o1.duration(), o2.duration());
         }
     }
 
     private static class ByAlbum implements Comparator<Song> {
         @Override
         public int compare(Song o1, Song o2) {
-            return o1.getAlbum().getName().compareTo(o2.getAlbum().getName());
+            return o1.album().getName().compareTo(o2.album().getName());
         }
     }
 
-    private final Album album;
-    private final String name;
-    private final int duration;
-
-    public Song(Album album, String name, int duration) {
-        this.album = album;
-        this.name = name;
-        this.duration = duration;
-    }
-
     public String formatDuration() {
-        int seconds = getDuration();
+        int seconds = duration();
 
         int hours = seconds / SECONDS_IN_HOUR;
         seconds -= hours * SECONDS_IN_HOUR;
@@ -67,7 +57,7 @@ public class Song implements Comparable<Song> {
             int compareDuration = Integer.compare(duration, other.duration);
 
             if (compareDuration == 0) {
-                return album.getName().compareTo(other.getAlbum().getName());
+                return album.getName().compareTo(other.album().getName());
             }
 
             return compareDuration;
@@ -94,19 +84,7 @@ public class Song implements Comparable<Song> {
     public String toString() {
         return String.format(
                 "Song[name=%s, duration=%s, album=%s]",
-                getName(), formatDuration(), getAlbum().getName()
+                name(), formatDuration(), album().getName()
         );
-    }
-
-    public Album getAlbum() {
-        return album;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getDuration() {
-        return duration;
     }
 }

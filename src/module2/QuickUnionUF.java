@@ -11,7 +11,6 @@ package module2;
 import edu.princeton.cs.algs4.StdIn;
 
 public class QuickUnionUF extends AbstractUF {
-
     public QuickUnionUF(int N) {
         super(N);
     }

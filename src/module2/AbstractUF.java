@@ -13,7 +13,6 @@ import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 
 abstract public class AbstractUF {
-
     protected final int[] id;
     protected final int[] treeSize;
     protected final int size;

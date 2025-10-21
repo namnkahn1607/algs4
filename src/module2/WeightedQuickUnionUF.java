@@ -11,7 +11,6 @@ package module2;
 import edu.princeton.cs.algs4.StdIn;
 
 public class WeightedQuickUnionUF extends AbstractUF {
-
     public WeightedQuickUnionUF(int N) {
         super(N);
     }

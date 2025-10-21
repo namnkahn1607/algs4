@@ -11,6 +11,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
     private int capacity;
     private int size;
 
+    @SuppressWarnings("unchecked")
     public RandomizedQueue() {
         array = (Item[]) new Object[INITIAL_CAPACITY];
         capacity = INITIAL_CAPACITY;
