@@ -1,4 +1,4 @@
-package module6;
+package module7;
 
 import java.util.Arrays;
 
