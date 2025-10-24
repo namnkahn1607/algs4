@@ -28,6 +28,6 @@ public class Person {
 
     @Override
     public String toString() {
-        return String.format("oasis.Week5.Person[name=%s,address=%s]", getName(), getAddress());
+        return String.format("oasis.Week5.oasis.Week7.Person[name=%s,address=%s]", getName(), getAddress());
     }
 }

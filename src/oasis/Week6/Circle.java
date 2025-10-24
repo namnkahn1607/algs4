@@ -71,7 +71,7 @@ public class Circle extends Shape {
     @Override
     public String toString() {
         return String.format(
-                "Circle[center=%s,radius=%.1f,color=%s,filled=%b]",
+                "oasis.Week7.Circle[center=%s,radius=%.1f,color=%s,filled=%b]",
                 getCenter().toString(), getRadius(), getColor(), isFilled()
         );
     }

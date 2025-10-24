@@ -41,6 +41,6 @@ public class Circle {
 
     @Override
     public String toString() {
-        return String.format("oasis.Week6.Circle[radius=%f,color=%s]", getRadius(), getColor());
+        return String.format("oasis.Week6.oasis.Week7.Circle[radius=%f,color=%s]", getRadius(), getColor());
     }
 }
