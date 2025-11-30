@@ -7,6 +7,7 @@ import java.util.Queue;
  * - Space: E
  */
 public class KruskalMST {
+    
     private Queue<Edge> mst;
     private double weight;
 
