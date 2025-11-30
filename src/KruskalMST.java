@@ -1,3 +1,4 @@
+import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Queue;
 
@@ -8,8 +9,8 @@ import java.util.Queue;
  */
 public class KruskalMST {
     
-    private Queue<Edge> mst;
-    private double weight;
+    private Queue<Edge> mst = new ArrayDeque<>();
+    private double weight = 0.0;
 
     public KruskalMST(EdgeWeightedGraph G) {
         final int V = G.V();
